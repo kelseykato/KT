@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fa7274b07bd1d48ce961f02b4770b959
-timeCreated: 1476864925
+timeCreated: 1476918361
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,10 +59,10 @@ TextureImporter:
       name: cat_run_brown 64x64_Run_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 276
-        width: 208
-        height: 140
+        x: 19
+        y: 267
+        width: 210
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -72,9 +72,9 @@ TextureImporter:
       name: cat_run_brown 64x64_Run_2
       rect:
         serializedVersion: 2
-        x: 276
+        x: 275
         y: 260
-        width: 208
+        width: 210
         height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -85,9 +85,9 @@ TextureImporter:
       name: cat_run_brown 64x64_Run_3
       rect:
         serializedVersion: 2
-        x: 20
+        x: 19
         y: 0
-        width: 208
+        width: 210
         height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
