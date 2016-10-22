@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	public LayerMask groundMask;
 
 	bool isGrounded;
+    bool doubleJump = false;
 	Rigidbody2D rb2D;
 
 	void Start () {
@@ -34,12 +35,17 @@ public class PlayerMovement : MonoBehaviour {
             rb2D.velocity = new Vector2(speed - 2, rb2D.velocity.y);
         }
 
-        //Jumping
+        //Jumping + Doublejump
 		isGrounded = Physics2D.OverlapCircle (groundPoint.position, radius, groundMask);
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
 			rb2D.AddForce (new Vector2 (0, jumpHeight));
-		}
+            doubleJump = false;
+		} else if (Input.GetKeyDown(KeyCode.UpArrow) && !isGrounded && !doubleJump)
+        {
+            rb2D.AddForce(new Vector2(0, jumpHeight));
+            doubleJump = true;
+        }
 	}
 
 	void OnDrawGizmos() {
