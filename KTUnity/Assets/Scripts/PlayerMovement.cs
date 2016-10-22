@@ -39,11 +39,20 @@ public class PlayerMovement : MonoBehaviour {
 		isGrounded = Physics2D.OverlapCircle (groundPoint.position, radius, groundMask);
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
+
+            //If player is pressing up and the cat is on the ground, then jump and reset double jump ability
 			rb2D.AddForce (new Vector2 (0, jumpHeight));
             doubleJump = false;
+
 		} else if (Input.GetKeyDown(KeyCode.UpArrow) && !isGrounded && !doubleJump)
         {
+            //If pressing up, is not on ground, and doublejump has not been used, then if player presses up, the cat double jumps
+
+            //cancelling out velocity from first jump to achieve a smoother second jump effect
+            rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
+            //double jump
             rb2D.AddForce(new Vector2(0, jumpHeight));
+            //double jump set to true so player cannot infinitely jumping
             doubleJump = true;
         }
 	}
