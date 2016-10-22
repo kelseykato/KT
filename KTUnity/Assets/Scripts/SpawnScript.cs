@@ -7,8 +7,8 @@ public class SpawnScript : MonoBehaviour {
     public GameObject[] obj;
 
     //variables to define how fast things spawn. In this case, randomly spawn between 1 and 2 seconds.
-    public float spawnMin = 1f;
-    public float spawnMax = 2f;
+    public float spawnMin = 2f;
+    public float spawnMax = 3f;
 	// Use this for initialization
 	void Start () {
         Spawn();

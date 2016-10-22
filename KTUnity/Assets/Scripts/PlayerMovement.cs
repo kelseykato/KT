@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
             //cancelling out velocity from first jump to achieve a smoother second jump effect
             rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
             //double jump
-            rb2D.AddForce(new Vector2(0, jumpHeight));
+            rb2D.AddForce(new Vector2(50, jumpHeight));
             //double jump set to true so player cannot infinitely jumping
             doubleJump = true;
         }
