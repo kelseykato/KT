@@ -10,14 +10,16 @@ public class CameraMovement : MonoBehaviour {
 
 	float lowestY; //lowest point that camera can go
 
-	void Start () {
+	void Start () 
+	{
 	
 		offset = transform.position - target.position; //maintain diff. in offset
 
 		lowestY = transform.position.y; //y-coord of initial position of camera
 	}
 	
-	void FixedUpdate () {
+	void FixedUpdate () 
+	{
 
 		Vector3 targetCamPosition = target.position + offset; //where the camera wants to be located
 

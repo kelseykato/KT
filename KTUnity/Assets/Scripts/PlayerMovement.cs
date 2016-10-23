@@ -14,13 +14,15 @@ public class PlayerMovement : MonoBehaviour {
     bool doubleJump = false;
 	Rigidbody2D rb2D;
 
-	void Start () {
+	void Start () 
+	{
 
 		rb2D = GetComponent<Rigidbody2D> ();
 
 	}
 	
-	void Update () {
+	void Update () 
+	{
         //Movement Speed - default speed is defined above as a float in speed.  If no keys are pressed, default speed is defined as 5.
         //If right is pressed speed is 5 + 2 and if left is pressed it's 5 - 2
 
@@ -38,7 +40,8 @@ public class PlayerMovement : MonoBehaviour {
         //Jumping + Doublejump
 		isGrounded = Physics2D.OverlapCircle (groundPoint.position, radius, groundMask);
 
-		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
+		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) 
+		{
 
             //If player is pressing up and the cat is on the ground, then jump and reset double jump ability
 			rb2D.AddForce (new Vector2 (0, jumpHeight));
@@ -57,7 +60,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 	}
 
-	void OnDrawGizmos() {
+	void OnDrawGizmos() 
+	{
 		Gizmos.color = Color.cyan;
 		Gizmos.DrawWireSphere (groundPoint.position, radius);
 	}

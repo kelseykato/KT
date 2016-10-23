@@ -15,7 +15,8 @@ public class PlatformDestroyer : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (transform.position.x < platformDestroyPoint.transform.position.x) {
+		if (transform.position.x < platformDestroyPoint.transform.position.x) 
+		{
 
 			Destroy (gameObject);
 

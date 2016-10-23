@@ -417,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 443422558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -3, z: 10}
+  m_LocalPosition: {x: 18, y: -3, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -643,6 +643,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010061253312, guid: 6b4456ab24b0e26478c19f519f72083c,
     type: 2}
   m_PrefabInternal: {fileID: 616204499}
+--- !u!1 &764921025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 764921027}
+  - 114: {fileID: 764921026}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &764921026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764921025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34319102eed9a44968dd4c736c4d85e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1000014294249376, guid: ab5ecff959cb445cda627a482ea8d152,
+    type: 2}
+  pooledAmount: 2
+--- !u!4 &764921027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764921025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &799458695 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000014294249376, guid: ab5ecff959cb445cda627a482ea8d152,
@@ -972,6 +1015,9 @@ MonoBehaviour:
   platform: {fileID: 1000014294249376, guid: ab5ecff959cb445cda627a482ea8d152, type: 2}
   genPoint: {fileID: 443422559}
   distBetween: 2
+  distBetweenMin: 0
+  distBewteenMax: 5
+  objectPool: {fileID: 764921026}
 --- !u!4 &1717855905
 Transform:
   m_ObjectHideFlags: 0
@@ -979,7 +1025,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717855903}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -3, z: 0}
+  m_LocalPosition: {x: 8, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
