@@ -420,6 +420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   jumpHeight: 750
+  speedMultiplier: 1.15
+  speedIncreaseMilestone: 100
   groundPoint: {fileID: 468698100}
   radius: 0.05
   groundMask:
@@ -798,8 +800,7 @@ Prefab:
       propertyPath: m_Name
       value: Rainbow Road Terrain (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012586917424, guid: ab5ecff959cb445cda627a482ea8d152,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: platformDestroyPoint
       value: 
       objectReference: {fileID: 1935043859}
@@ -1140,7 +1141,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391254418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -3, z: 0}
+  m_LocalPosition: {x: -0.4, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1199,8 +1200,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011903683468, guid: ab5ecff959cb445cda627a482ea8d152,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: platformDestroyPoint
       value: 
       objectReference: {fileID: 1935043859}

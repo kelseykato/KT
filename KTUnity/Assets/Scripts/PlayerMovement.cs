@@ -6,6 +6,12 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 5f;
 	public int jumpHeight;
 
+
+	public float speedMultiplier;
+	//set distance that indicates when player will speed up in game
+	public float speedIncreaseMilestone; 
+	private float speedMilestoneCount;
+
 	public Transform groundPoint;
 	public float radius;
 	public LayerMask groundMask;
@@ -20,10 +26,31 @@ public class PlayerMovement : MonoBehaviour {
 
 		rb2D = GetComponent<Rigidbody2D> ();
 
+		//so that speed doesn't automatically increase at the start of the game
+		speedMilestoneCount = speedIncreaseMilestone;
+
 	}
 	
 	void Update () 
 	{
+
+		//if current position is past the current milestone count, increase count
+		//by constant speedIncreaseMilestone value
+		//new constant = old constant + current milestoneCount
+		//this ensures that the longer the game goes on, the intervals at which
+		//player increases speed get bigger (the player will have to go longer distances
+		//before the speed increases again
+		//new speed = old speed times constant speed multiplier
+		if (transform.position.x > speedMilestoneCount) 
+		{
+
+			speedMilestoneCount += speedIncreaseMilestone;
+
+			speedIncreaseMilestone = speedIncreaseMilestone + speedMilestoneCount;
+
+			speed = speed * speedMultiplier;
+
+		}
         //Movement Speed - default speed is defined above as a float in speed.  If no keys are pressed, default speed is defined as 5.
         //If right is pressed speed is 5 + 2 and if left is pressed it's 5 - 2
 
