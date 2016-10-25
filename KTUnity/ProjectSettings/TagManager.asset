@@ -8,6 +8,7 @@ TagManager:
   - Dangerous
   - Smelly
   - Fire
+  - killbox
   layers:
   - Default
   - TransparentFX

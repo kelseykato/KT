@@ -4,13 +4,19 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5f;
+	//stores initial speed so that each time game resets, speed resets
+	private float speedStore;
 	public int jumpHeight;
 
 
 	public float speedMultiplier;
 	//set distance that indicates when player will speed up in game
 	public float speedIncreaseMilestone; 
+	//stores initial speed increase value so that each time game restarts, increase counter is reset
+	private float speedIncreaseMilestoneStore;
 	private float speedMilestoneCount;
+	//stores initial milestone so that each time game restarts, milestone Counter is reset
+	private float speedMilestoneCountStore;
 
 	public Transform groundPoint;
 	public float radius;
@@ -20,6 +26,8 @@ public class PlayerMovement : MonoBehaviour {
     bool doubleJump = false;
 	Rigidbody2D rb2D;
 
+	public GameManager theGameManager;
+
 
 	void Start () 
 	{
@@ -28,6 +36,11 @@ public class PlayerMovement : MonoBehaviour {
 
 		//so that speed doesn't automatically increase at the start of the game
 		speedMilestoneCount = speedIncreaseMilestone;
+
+		//inital speed and speedMilestoneCount values for each time game restarts
+		speedStore = speed;
+		speedMilestoneCountStore = speedMilestoneCount;
+		speedIncreaseMilestoneStore = speedIncreaseMilestone;
 
 	}
 	
@@ -86,6 +99,19 @@ public class PlayerMovement : MonoBehaviour {
             //double jump set to true so player cannot infinitely jumping
             doubleJump = true;
         }
+	}
+
+	//upon collision, what is the other object we (player) are colliding with
+	//each time game restarts, resets speed, speedIncreaseMilestone and speedMilestoneCount values
+	void OnCollisionEnter2D (Collision2D other) 
+	{
+		if (other.gameObject.tag == "killbox") 
+		{
+			theGameManager.RestartGame ();
+			speed = speedStore;
+			speedMilestoneCount = speedMilestoneCountStore;
+			speedIncreaseMilestone = speedIncreaseMilestoneStore;
+		}
 	}
 
 	void OnDrawGizmos() 
