@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     bool doubleJump = false;
 	Rigidbody2D rb2D;
 
+
 	void Start () 
 	{
 
