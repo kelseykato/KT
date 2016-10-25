@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000013778895804}
   - 212: {fileID: 212000012268590936}
   - 61: {fileID: 61000010067172612}
+  - 114: {fileID: 114000010017794388}
   m_Layer: 8
   m_Name: Rainbow Road Terrain
   m_TagString: Untagged
@@ -99,6 +100,18 @@ BoxCollider2D:
   m_Offset: {x: 4.8247995, y: 0.09475894}
   serializedVersion: 2
   m_Size: {x: 20.469297, y: 0.43720818}
+--- !u!114 &114000010017794388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014294249376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69889f14b13f845b7af836542e5122a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestroyPoint: {fileID: 0}
 --- !u!212 &212000012268590936
 SpriteRenderer:
   m_ObjectHideFlags: 1
