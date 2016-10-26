@@ -5,6 +5,7 @@ public class CameraMovement : MonoBehaviour {
 
 	public Transform target; //what the camera is following
 	public float smoothing; //dampening effect
+    public float offsetAmount = 5f;
 
 	Vector3 offset; //difference between character and camera
 
@@ -21,7 +22,7 @@ public class CameraMovement : MonoBehaviour {
 	void FixedUpdate () 
 	{
 
-		Vector3 targetCamPosition = target.position + offset; //where the camera wants to be located
+		Vector3 targetCamPosition = target.position + offset + Vector3.right*offsetAmount; //where the camera wants to be located
 
 		transform.position = Vector3.Lerp (transform.position, targetCamPosition, smoothing * Time.deltaTime);
 
