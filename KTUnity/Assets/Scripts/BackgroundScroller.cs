@@ -7,11 +7,14 @@ public class BackgroundScroller : MonoBehaviour {
     public float tileSizeX;
     public float cameraPos;
 
+
+
     private Vector3 startPosition;
 
     // Use this for initialization
     void Start () {
         startPosition = transform.position;
+
     }
 	
 	// Update is called once per frame
@@ -26,4 +29,5 @@ public class BackgroundScroller : MonoBehaviour {
         }
 
     }
+
 }

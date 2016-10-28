@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour {
 	public Transform platformGenerator;
 	private Vector3 platformGenStartPoint;
 
-	public GameObject player;
+    public GUIText scoreText;
+    public int score;
+
+    public GameObject player;
 	private Vector3 playerStartPoint;
 
 	private PlatformDestroyer[] platformList;
@@ -17,13 +20,16 @@ public class GameManager : MonoBehaviour {
 	
 		platformGenStartPoint = platformGenerator.position;
 		playerStartPoint = player.transform.position;
+        score = 100;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        //function called for asteroids destroyed
+        //UpdateScore();
+    }
+
+    // Update is called once per frame
+    void Update () {
+        scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time)/10)*10;
+    }
 
 	//coroutine = method that runs independently of script
 	public void RestartGame() 
