@@ -19,5 +19,11 @@ public class BackgroundScroller : MonoBehaviour {
         //float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeX) + Camera.main.transform.position.x;
         float newPosition = Time.time*scrollSpeed + Camera.main.transform.position.x;
         transform.position = startPosition + Vector3.right * newPosition;
+
+        if (Camera.main.transform.position.x - transform.position.x > 150)
+        {
+            transform.position = Vector3.right * 1204;
+        }
+
     }
 }
