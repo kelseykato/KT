@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetAxis("Horizontal") == 0)
         {
             rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
+
         } else if (Input.GetAxis("Horizontal") == 1)
         {
             rb2D.velocity = new Vector2(speed + 2, rb2D.velocity.y);
