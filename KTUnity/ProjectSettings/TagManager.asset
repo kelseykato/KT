@@ -9,6 +9,7 @@ TagManager:
   - Smelly
   - Fire
   - killbox
+  - Asteroid
   layers:
   - Default
   - TransparentFX
