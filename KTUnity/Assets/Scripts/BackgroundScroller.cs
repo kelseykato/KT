@@ -23,7 +23,7 @@ public class BackgroundScroller : MonoBehaviour {
         float newPosition = Time.time*scrollSpeed + Camera.main.transform.position.x;
         transform.position = startPosition + Vector3.right * newPosition;
 
-        if (Camera.main.transform.position.x - transform.position.x > 150)
+        if (Camera.main.transform.position.x - transform.position.x > 300)
         {
             transform.position = Vector3.right * 1204;
         }

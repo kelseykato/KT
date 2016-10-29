@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody2D rb2D;
 
 	public GameManager theGameManager;
+    public Transform FirePoint;
+    public GameObject laser;
 
 
 	void Start () 
@@ -99,6 +101,14 @@ public class PlayerMovement : MonoBehaviour {
             //double jump set to true so player cannot infinitely jumping
             doubleJump = true;
         }
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            Instantiate(laser, FirePoint.position, FirePoint.rotation);
+        }
+
+
 	}
 
 	//upon collision, what is the other object we (player) are colliding with
