@@ -5,6 +5,7 @@ public class LaserController : MonoBehaviour {
 
     public float speed;
     Rigidbody2D rigid;
+    public float lifetime = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,5 +26,7 @@ public class LaserController : MonoBehaviour {
         }
         Destroy(gameObject);
     }
+
+
 
 }
