@@ -29,9 +29,10 @@ public class PlayerMovement : MonoBehaviour {
 	public GameManager theGameManager;
     public Transform FirePoint;
     public GameObject laser;
+    public ObjectPooler[] objectPools;
+    private int laserPicker;
 
-
-	void Start () 
+    void Start () 
 	{
 
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -106,7 +107,12 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
-            Instantiate(laser, FirePoint.position, FirePoint.rotation);
+            laserPicker = Random.Range(0, objectPools.Length);
+            GameObject newLaser = objectPools[laserPicker].GetPooledObject();
+
+            newLaser.transform.position = FirePoint.position;
+            newLaser.transform.rotation = FirePoint.rotation;
+            newLaser.SetActive(true);
         }
 
         if (Input.GetButtonDown("Cancel"))

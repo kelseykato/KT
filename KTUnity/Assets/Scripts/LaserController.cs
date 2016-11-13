@@ -3,13 +3,15 @@ using System.Collections;
 
 public class LaserController : MonoBehaviour {
 
+    public GameObject laserDestroyPoint;
     public float speed;
     Rigidbody2D rigid;
-    public float lifetime = 3.0f;
+
 
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
+        laserDestroyPoint = GameObject.Find("PlatformGenPoint");
     }
 	
 	// Update is called once per frame
@@ -22,11 +24,19 @@ public class LaserController : MonoBehaviour {
     {
         if (other.tag == "Asteroid")
         {
-            Destroy(other.gameObject);
-        }
-        Destroy(gameObject);
+            (other.gameObject).SetActive(false);
+            gameObject.SetActive(false);
+        } 
+
     }
 
+    void FixedUpdate()
+    {
+        if (transform.position.x > laserDestroyPoint.transform.position.x)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
 
 }
