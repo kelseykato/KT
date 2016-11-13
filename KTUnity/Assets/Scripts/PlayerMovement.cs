@@ -109,6 +109,11 @@ public class PlayerMovement : MonoBehaviour {
             Instantiate(laser, FirePoint.position, FirePoint.rotation);
         }
 
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+            Time.timeScale = 1;
+        }
 
 	}
 
@@ -125,7 +130,23 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnDrawGizmos() 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Asteroid")
+        {
+            Time.timeScale = 0;
+
+        } else if (other.tag == "killbox")
+        {
+            Time.timeScale = 0;
+        }
+    }
+
+
+
+
+
+    void OnDrawGizmos() 
 	{
 		Gizmos.color = Color.cyan;
 		Gizmos.DrawWireSphere (groundPoint.position, radius);
