@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	
 		platformGenStartPoint = platformGenerator.position;
 		playerStartPoint = player.transform.position;
-        score = 100;
+
 
         //function called for asteroids destroyed
         //UpdateScore();

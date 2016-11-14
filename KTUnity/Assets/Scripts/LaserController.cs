@@ -8,8 +8,8 @@ public class LaserController : MonoBehaviour {
     Rigidbody2D rigid;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rigid = GetComponent<Rigidbody2D>();
         laserDestroyPoint = GameObject.Find("PlatformGenPoint");
     }
@@ -26,6 +26,7 @@ public class LaserController : MonoBehaviour {
         {
             (other.gameObject).SetActive(false);
             gameObject.SetActive(false);
+
         } 
 
     }
