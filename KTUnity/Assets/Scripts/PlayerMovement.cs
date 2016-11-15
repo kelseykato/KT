@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 	//stores initial speed so that each time game resets, speed resets
 	private float speedStore;
 	public int jumpHeight;
-
+    public float timeOfDeath;
 
 	public float speedMultiplier;
 	//set distance that indicates when player will speed up in game
@@ -125,26 +125,17 @@ public class PlayerMovement : MonoBehaviour {
 
 	//upon collision, what is the other object we (player) are colliding with
 	//each time game restarts, resets speed, speedIncreaseMilestone and speedMilestoneCount values
-	void OnCollisionEnter2D (Collision2D other) 
-	{
-		if (other.gameObject.tag == "killbox") 
-		{
-			theGameManager.RestartGame ();
-			speed = speedStore;
-			speedMilestoneCount = speedMilestoneCountStore;
-			speedIncreaseMilestone = speedIncreaseMilestoneStore;
-		}
-	}
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Asteroid")
+        if (other.tag == "Asteroid" || other.tag == "killbox")
         {
-            SceneManager.LoadScene("Menu");
+            timeOfDeath = Time.time;
+            (other.gameObject).SetActive(false);
+            gameObject.SetActive(false);
 
-        } else if (other.tag == "killbox")
-        {
-            SceneManager.LoadScene("Menu");
+
         }
     }
 
