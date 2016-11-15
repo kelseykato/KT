@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -117,8 +118,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetButtonDown("Cancel"))
         {
-            Application.LoadLevel(Application.loadedLevel);
-            Time.timeScale = 1;
+            SceneManager.LoadScene("Menu");
         }
 
 	}
@@ -140,11 +140,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (other.tag == "Asteroid")
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene("Menu");
 
         } else if (other.tag == "killbox")
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene("Menu");
         }
     }
 

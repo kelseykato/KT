@@ -26,7 +26,6 @@ public class AsteroidGenerator : MonoBehaviour
     private float maxHeight;
     public float maxHeightChange;
     private float heightChange;
-    Rigidbody2D rigid;
     public int rotationSpeed = 10;
 
     // Use this for initialization
@@ -38,7 +37,6 @@ public class AsteroidGenerator : MonoBehaviour
         minHeight = -20;
         maxHeight = 20;
 
-        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -78,7 +76,7 @@ public class AsteroidGenerator : MonoBehaviour
             newAsteroid.transform.position = transform.position;
             newAsteroid.transform.rotation = transform.rotation;
             newAsteroid.SetActive(true);
-            rigid.AddTorque(rotationSpeed, ForceMode2D.Impulse);
+
 
         }
     }
