@@ -11,20 +11,19 @@ public class GameManager : MonoBehaviour {
     public GUIText scoreText;
     public int score;
     public int finalScore;
-
+    private bool timeCounter;
     public GameObject player;
 	private Vector3 playerStartPoint;
+    PlayerMovement playerMovement;
 
-	private PlatformDestroyer[] platformList;
-    public float timeOfDeath;
+    private PlatformDestroyer[] platformList;
+    private float timeOfDeath;
 	// Use this for initialization
 	void Start () {
 	
 		platformGenStartPoint = platformGenerator.position;
 		playerStartPoint = player.transform.position;
-        GameObject mainCharacter = GameObject.Find("Main Character");
-        PlayerMovement playerMovement = mainCharacter.GetComponent<PlayerMovement>();
-        timeOfDeath = playerMovement.timeOfDeath;
+        timeCounter = false;
         //function called for asteroids destroyed
         //UpdateScore();
     }
@@ -32,11 +31,25 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-            scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time) / 10) * 10;
+        scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time) / 10) * 10;
 
-        if (Time.time - timeOfDeath > deathTimeDelay )
+        if (player.activeSelf == false)
         {
-            SceneManager.LoadScene("Menu");
+            if (timeCounter == false)
+            {
+                timeOfDeath = Time.time;
+                timeCounter = true;
+            } else
+            {
+                if (Time.time - timeOfDeath > deathTimeDelay)
+                {
+                    SceneManager.LoadScene("Menu");
+                }
+            }
+
+
+
+
         }
 
     }
