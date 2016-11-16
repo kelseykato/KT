@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDestroyPoint: {fileID: 0}
   speed: 50
-  lifetime: 3
+  positionCheckDelay: 0.1
 --- !u!212 &212000013498454958
 SpriteRenderer:
   m_ObjectHideFlags: 1
