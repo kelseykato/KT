@@ -400,6 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   jumpHeight: 750
+  timeOfDeath: 0
   speedMultiplier: 1.15
   speedIncreaseMilestone: 100
   groundPoint: {fileID: 468698100}
@@ -452,8 +453,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformGenerator: {fileID: 1717855905}
+  deathTimeDelay: 5
   scoreText: {fileID: 1378008247}
   score: 0
+  finalScore: 0
   player: {fileID: 399742811}
 --- !u!120 &399742822
 LineRenderer:
@@ -930,8 +933,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformGenerator: {fileID: 1717855905}
+  deathTimeDelay: 3
   scoreText: {fileID: 1378008247}
   score: 100
+  finalScore: 0
   player: {fileID: 399742811}
 --- !u!4 &974904563
 Transform:
@@ -1524,7 +1529,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 1293320402
+  randomSeed: 2005855670
   InitialModule:
     serializedVersion: 2
     enabled: 1

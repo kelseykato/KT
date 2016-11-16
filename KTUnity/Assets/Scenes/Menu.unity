@@ -692,7 +692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Some random title?
+  m_Text: Laser Space Cat
 --- !u!222 &1139858286
 CanvasRenderer:
   m_ObjectHideFlags: 0
