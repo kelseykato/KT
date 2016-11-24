@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public float deathTimeDelay = 5.0f;
     public GUIText scoreText;
     public int score;
-    public int finalScore;
+    static int finalScore;
     private bool timeCounter;
     public GameObject player;
 	private Vector3 playerStartPoint;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
             {
                 if (Time.time - timeOfDeath > deathTimeDelay)
                 {
-                    SceneManager.LoadScene("Menu");
+                    SceneManager.LoadScene("Score");
                 }
             }
 

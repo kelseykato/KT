@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/First.unity
   - enabled: 1
     path: Assets/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Scenes/Score.unity
