@@ -38,13 +38,13 @@ public class GameManager : MonoBehaviour {
 
         if (player.activeSelf == true)
         {
-            scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time) / 10) * 10;
+            scoreText.text = "Score: " + System.Math.Ceiling((score * Time.timeSinceLevelLoad) / 10) * 10;
         } else {
             if (timeCounter == false)
             {
-                timeOfDeath = Time.time;
+                timeOfDeath = Time.timeSinceLevelLoad;
                 timeCounter = true;
-                finalScore = (System.Math.Ceiling((score * Time.time) / 10) * 10).ToString();
+                finalScore = (System.Math.Ceiling((score * Time.timeSinceLevelLoad) / 10) * 10).ToString();
                
             } else
             {
