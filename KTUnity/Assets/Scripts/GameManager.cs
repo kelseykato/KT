@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour {
     public float deathTimeDelay = 5.0f;
     public GUIText scoreText;
     public int score;
-    static int finalScore;
+    public static string finalScore;
+
+
     private bool timeCounter;
     public GameObject player;
 	private Vector3 playerStartPoint;
@@ -20,25 +22,30 @@ public class GameManager : MonoBehaviour {
     private float timeOfDeath;
 	// Use this for initialization
 	void Start () {
+
+        DontDestroyOnLoad(gameObject);
 	
 		platformGenStartPoint = platformGenerator.position;
 		playerStartPoint = player.transform.position;
         timeCounter = false;
         //function called for asteroids destroyed
         //UpdateScore();
+
     }
 
     // Update is called once per frame
     void Update () {
 
-        scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time) / 10) * 10;
-
-        if (player.activeSelf == false)
+        if (player.activeSelf == true)
         {
+            scoreText.text = "Score: " + System.Math.Ceiling((score * Time.time) / 10) * 10;
+        } else {
             if (timeCounter == false)
             {
                 timeOfDeath = Time.time;
                 timeCounter = true;
+                finalScore = (System.Math.Ceiling((score * Time.time) / 10) * 10).ToString();
+               
             } else
             {
                 if (Time.time - timeOfDeath > deathTimeDelay)
